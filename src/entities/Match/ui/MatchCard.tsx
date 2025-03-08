@@ -134,18 +134,17 @@ export const MatchStatus: FC<MatchStatusProps> = ({ status }) => {
       width: 112,
     },
   };
-  return <div
-  className={`font-inter text-xs font-semibold ${
-    statusData[status].color
-  } py-[6px] text-white rounded-sm text-center`}
-  style={{
-    width: statusData[status].width,
-  }}
->
-  {statusData[status].text}
-</div>
-}
-
+  return (
+    <div
+      className={`font-inter text-xs font-semibold ${statusData[status].color} py-[6px] text-white rounded-sm text-center`}
+      style={{
+        width: statusData[status].width,
+      }}
+    >
+      {statusData[status].text}
+    </div>
+  );
+};
 
 export const MatchCard: FC<MatchCardProps> = ({ match }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -175,7 +174,7 @@ export const MatchCard: FC<MatchCardProps> = ({ match }) => {
           <div className='font-inter text-xl font-semibold text-white'>
             {match.homeScore} : {match.awayScore}
           </div>
-          
+          <MatchStatus status={match.status} />
         </div>
 
         <div className='flex items-center gap-4'>
@@ -249,7 +248,9 @@ export const MatchCard: FC<MatchCardProps> = ({ match }) => {
         )}
       </AnimatePresence>
       <div
-        className={`flex py-[18px] justify-center w-full lg:hidden ${!isExpanded && '-rotate-180'}`}
+        className={`flex py-[18px] justify-center w-full lg:hidden ${
+          !isExpanded && '-rotate-180'
+        }`}
       >
         <span className='text-white'>
           <IconChevron />
