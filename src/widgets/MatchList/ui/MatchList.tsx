@@ -11,7 +11,7 @@ export const MatchList: FC<MatchListProps> = ({ items, isLoading }) => {
     );
 
   return (
-    <div className='flex flex-col gap-8 w-full'>
+    <div className='flex flex-col gap-8 w-full lg:gap-[12px] gap-[8px]'>
       {items.map((match, index) => (
         <MatchCard
           key={index}

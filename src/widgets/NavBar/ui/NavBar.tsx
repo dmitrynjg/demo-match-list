@@ -42,7 +42,7 @@ export const NavBar: FC<NavBarProps> = ({
       </div>
       <div className='inline-flex w-full lg:w-auto lg:gap-[12px] lg:pt-0 pt-[10px]'>
         {hasError && (
-          <div className='bg-[#0F1318] lg:flex hidden gap-[10px] rounded-sm items-center px-[24px]'>
+          <div className='bg-[#0F1318] xl:flex hidden gap-[10px] rounded-sm items-center px-[24px]'>
             <IconError />
             <span className='font-inter text-lg'>
               Ошибка: не удалось загрузить информацию
